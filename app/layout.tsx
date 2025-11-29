@@ -8,6 +8,7 @@ import {
 import { Toaster } from "@/components/ui/sonner"
 import { Providers } from "@/components/providers"
 import "./globals.css"
+import Header from "@/components/common/header";
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -46,7 +47,10 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body className={`font-sans antialiased`}>
           <Providers>
-            {children}
+            <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+              <Header />
+              {children}
+            </div>
             <Analytics />
             <Toaster />
           </Providers>

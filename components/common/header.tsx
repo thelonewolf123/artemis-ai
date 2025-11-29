@@ -8,13 +8,31 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { useEffect, useState } from "react";
 
-interface HeaderProps {
-  isDark: boolean
-  toggleTheme: () => void
-}
 
-export default function Header({ isDark, toggleTheme }: HeaderProps) {
+export default function Header() {
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    // Check system preference on mount
+    const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+    setIsDark(isDarkMode)
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark")
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    const newDarkMode = !isDark
+    setIsDark(newDarkMode)
+    if (newDarkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }
+
   return (
     <header className="fixed top-0 w-full z-50 border-b border-white/10 backdrop-blur-xl bg-background/60 supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
