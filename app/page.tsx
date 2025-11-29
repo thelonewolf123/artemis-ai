@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import Header from "@/components/header"
 import Hero from "@/components/hero"
+import SkillMatrix from "@/components/skill-matrix"
 import Features from "@/components/features"
 import HowItWorks from "@/components/how-it-works"
 import CTA from "@/components/cta"
@@ -35,6 +36,7 @@ export default function Page() {
       <Header isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <SkillMatrix />
         <Features />
         <HowItWorks />
         <CTA />

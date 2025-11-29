@@ -29,10 +29,10 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 px-6">
+    <section id="how-it-works" className="py-24 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance tracking-tight">
             How Artemis Works
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -40,31 +40,31 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-4 gap-8 relative">
+          {/* Connector Line */}
+          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10" />
+
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
-              <div key={idx} className="relative">
-                <div className="flex flex-col h-full">
-                  <div className="flex flex-col items-start mb-6">
-                    <div className="text-6xl font-bold text-primary/75 mb-3 leading-none">
-                      0{idx + 1}
+              <div key={idx} className="relative group">
+                <div className="flex flex-col h-full items-center text-center md:items-start md:text-left">
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 rounded-3xl bg-background flex items-center justify-center relative z-10 border border-border/50 group-hover:border-primary/50 transition-colors duration-300">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="text-primary" size={32} />
+                      </div>
                     </div>
-                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary to-secondary flex items-center justify-center mb-4 relative z-10 shadow-lg shadow-primary/20">
-                      <Icon className="text-white" size={24} />
+                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-lg shadow-primary/20 z-20">
+                      {idx + 1}
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm grow">
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     {step.description}
                   </p>
                 </div>
-
-                {/* Connecting line between steps */}
-                {idx < steps.length - 1 && (
-                  <div className="hidden md:block absolute -right-3 top-12 w-6 h-0.5 bg-linear-to-r from-primary/40 to-transparent" />
-                )}
               </div>
             );
           })}

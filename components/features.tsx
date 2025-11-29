@@ -41,10 +41,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-6 bg-muted/30">
-      <div className="max-w-6xl mx-auto">
+    <section id="features" className="py-24 px-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
             Powerful Features
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -58,16 +58,16 @@ export default function Features() {
             return (
               <div
                 key={idx}
-                className="group relative p-6 rounded-xl border border-border/50 bg-card hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                className="group relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/5"
               >
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-lg bg-linear-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4">
-                    <Icon className="text-primary" size={24} />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-white/5">
+                    <Icon className="text-primary" size={28} />
                   </div>
 
-                  <h3 className="text-lg font-semibold mb-2">
+                  <h3 className="text-xl font-semibold mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -79,8 +79,8 @@ export default function Features() {
           })}
         </div>
 
-        <div className="mt-12 p-4 bg-primary/5 border border-primary/20 rounded-lg">
-          <p className="text-sm text-center text-muted-foreground">
+        <div className="mt-16 p-6 bg-primary/5 border border-primary/10 rounded-2xl backdrop-blur-sm">
+          <p className="text-sm text-center text-muted-foreground font-medium">
             * Email and Calendar features coming soon in public beta
           </p>
         </div>
