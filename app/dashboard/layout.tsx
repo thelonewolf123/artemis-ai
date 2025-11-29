@@ -1,9 +1,14 @@
-import { DashboardLayoutClient } from "@/components/dashboard/dashboard-layout-client"
+import { Sidebar } from "@/components/dashboard/sidebar"
 
 export default function DashboardLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  return <DashboardLayoutClient>{children}</DashboardLayoutClient>
+    return (<div className="pt-[72px] flex h-screen overflow-hidden">
+        <Sidebar />
+        <main className="flex-1 overflow-y-auto p-8">
+            {children}
+        </main>
+    </div>)
 }
