@@ -1,7 +1,7 @@
 import { MessageCircle, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import HeroMobileDemo from "@/components/hero-mobile-demo"
+import HeroMobileDemo from "@/components/landing/hero-mobile-demo"
 
 export default function Hero() {
   return (

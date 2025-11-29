@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next"
 import {
   ClerkProvider,
 } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/sonner"
+import { Providers } from "@/components/providers"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -43,9 +45,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={`font-sans antialiased`}>
-
-          {children}
-          <Analytics />
+          <Providers>
+            {children}
+            <Analytics />
+            <Toaster />
+          </Providers>
         </body>
       </html>
     </ClerkProvider>

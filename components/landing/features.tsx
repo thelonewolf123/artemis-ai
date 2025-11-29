@@ -1,4 +1,4 @@
-import FeaturesBento from "@/components/features-bento"
+import FeaturesBento from "@/components/landing/features-bento"
 
 export default function Features() {
   return (

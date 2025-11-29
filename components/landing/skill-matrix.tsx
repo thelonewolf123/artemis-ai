@@ -1,5 +1,5 @@
 import { Database, Layers, BrainCircuit } from "lucide-react"
-import SkillMatrixAnimated from "@/components/skill-matrix-animated"
+import SkillMatrixAnimated from "@/components/landing/skill-matrix-animated"
 
 export default function SkillMatrix() {
   return (
