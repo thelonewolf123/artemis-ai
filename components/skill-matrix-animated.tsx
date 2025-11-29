@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Database, Activity, Utensils, BrainCircuit, Check, Zap, Calendar, ArrowRight } from "lucide-react"
+import { Activity, Utensils, BrainCircuit, Check, Zap, Calendar } from "lucide-react"
 
 const skills = [
   {

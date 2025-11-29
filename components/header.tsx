@@ -1,6 +1,13 @@
 "use client"
 
 import { Moon, Sun } from "lucide-react"
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 interface HeaderProps {
   isDark: boolean
@@ -31,6 +38,22 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-4">
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                Sign In
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button className="text-sm font-medium bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <div className="w-px h-6 bg-border mx-2" />
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors"
