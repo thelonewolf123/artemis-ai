@@ -23,9 +23,10 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 interface CreateSkillDialogProps {
   chatId: string
   onSkillCreated: () => void
+  trigger?: React.ReactNode
 }
 
-export function CreateSkillDialog({ chatId, onSkillCreated }: CreateSkillDialogProps) {
+export function CreateSkillDialog({ chatId, onSkillCreated, trigger }: CreateSkillDialogProps) {
   const [open, setOpen] = useState(false)
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
@@ -73,9 +74,11 @@ export function CreateSkillDialog({ chatId, onSkillCreated }: CreateSkillDialogP
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button>
-          <Plus className="mr-2 h-4 w-4" /> New Skill
-        </Button>
+        {trigger ? trigger : (
+          <Button>
+            <Plus className="mr-2 h-4 w-4" /> New Skill
+          </Button>
+        )}
       </DialogTrigger>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
