@@ -1,7 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Header from "@/components/common/header"
 import Hero from "@/components/landing/hero"
 import SkillMatrix from "@/components/landing/skill-matrix"
 import Features from "@/components/landing/features"
